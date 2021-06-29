@@ -2,7 +2,9 @@ from .base import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['creativescrapyard.pythonanywhere.comos.getenv("SECRET_KEY")','www.creativescrapyard.pythonanywhere.com']
+# ALLOWED_HOSTS = ['creativescrapyard.pythonanywhere.com','www.creativescrapyard.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
+
 
 DATABASES = {
     'default': {
@@ -38,3 +40,4 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
 SECURE_BROWSER_XSS_FILTER = True
+

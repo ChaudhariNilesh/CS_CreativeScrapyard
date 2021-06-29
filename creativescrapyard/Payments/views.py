@@ -3,7 +3,7 @@ from django.http.response import JsonResponse
 from django.shortcuts import redirect, render,get_object_or_404
 from django.contrib.auth import authenticate, login as auth_login
 from django.conf import settings
-from .models import Transaction,Payment
+from .models import Payment
 from Cart.models import Cart
 from Order.models import tbl_orders_mst,tbl_orders_details
 from Items.models import tbl_creativeitems_mst

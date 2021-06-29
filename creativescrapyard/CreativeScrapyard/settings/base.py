@@ -79,19 +79,6 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#     'ENGINE': 'django.db.backends.mysql',
-#     'NAME': 'creativescrapyardDB',
-#     'USER': 'root',
-#     'PASSWORD': "",
-#     'HOST': "",
-#     'PORT': "3306",
-#     'OPTIONS': {
-#     'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-# }
-# }
-# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -137,6 +124,10 @@ AUTH_USER_MODEL = 'Authentication.User'
 
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),"CreativeScrapyard","static","static-only")
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),"CreativeScrapyard","static","media")    
+STATICFILES_DIRS = (os.path.join(os.path.dirname(BASE_DIR),"CreativeScrapyard","static","static"),)
 
 
 MESSAGE_TAGS = {
@@ -147,3 +138,16 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-danger',
 }
 
+EMAIL_BACKEND = os.getenv("EMAIL_BACKEND")
+EMAIL_HOST= os.getenv("EMAIL_HOST")
+EMAIL_USE_TLS= os.getenv("EMAIL_USE_TLS")
+EMAIL_PORT= os.getenv("EMAIL_PORT")
+EMAIL_HOST_USER= os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD= os.getenv("EMAIL_HOST_PASSWORD")
+
+
+PAYTM_MERCHANT_ID= os.getenv("PAYTM_MERCHANT_ID")
+PAYTM_SECRET_KEY= os.getenv("PAYTM_SECRET_KEY")
+PAYTM_WEBSITE= os.getenv("PAYTM_WEBSITE")
+PAYTM_CHANNEL_ID= os.getenv("PAYTM_CHANNEL_ID")
+PAYTM_INDUSTRY_TYPE_ID= os.getenv("PAYTM_INDUSTRY_TYPE_ID")

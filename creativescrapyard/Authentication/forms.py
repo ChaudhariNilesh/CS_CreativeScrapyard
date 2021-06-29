@@ -299,8 +299,8 @@ class AddressForm(forms.ModelForm):
 
 
 
-class PhotoForm(forms.ModelForm):
-    class Meta:
-        model = Photo
-        fields = ('file', )
+# class PhotoForm(forms.ModelForm):
+#     class Meta:
+#         model = Photo
+#         fields = ('file', )
 

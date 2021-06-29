@@ -123,10 +123,10 @@ class Address(models.Model):
 
 
 
-class Photo(models.Model):
-    title = models.CharField(max_length=255, blank=True)
-    file = models.ImageField(upload_to='photos/')
-    uploaded_at = models.DateTimeField(auto_now_add=True)
+# class Photo(models.Model):
+#     title = models.CharField(max_length=255, blank=True)
+#     file = models.ImageField(upload_to='photos/')
+#     uploaded_at = models.DateTimeField(auto_now_add=True)
 
 # class Review(models.Model):
 #     review_id=models.AutoField(primary_key=True, validators=[MaxValueValidator(9999999999)])
