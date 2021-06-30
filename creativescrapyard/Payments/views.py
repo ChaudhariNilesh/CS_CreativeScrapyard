@@ -100,7 +100,7 @@ def initiate_payment(request):
                         # ('EMAIL', request.user.email),
                         # ('MOBILE_N0', '9911223388'),
                         ('INDUSTRY_TYPE_ID', settings.PAYTM_INDUSTRY_TYPE_ID),
-                        ('CALLBACK_URL', 'http://127.0.0.1:8000/callback/'),
+                        ('CALLBACK_URL', settings.PAYTM_CALLBACK_URL),
                         # ('PAYMENT_MODE_ONLY', 'NO'),
                     )
 
@@ -194,7 +194,7 @@ def initiate_payment(request):
                             # ('EMAIL', request.user.email),
                             # ('MOBILE_N0', '9911223388'),
                             ('INDUSTRY_TYPE_ID', settings.PAYTM_INDUSTRY_TYPE_ID),
-                            ('CALLBACK_URL', 'http://127.0.0.1:8000/callback/'),
+                            ('CALLBACK_URL', settings.PAYTM_CALLBACK_URL),
                             # ('PAYMENT_MODE_ONLY', 'NO'),
                         )
 
@@ -279,7 +279,7 @@ def orderMail(typeFor,order):
     
     if typeFor == "placeOrder":
         emailmessage="Your order with Order ID : "+str(order.order_id)+" has been placed successfully."+"\nYour can check your order details at "\
-            + "http://127.0.0.1:8000/accounts/dashboard/orders/history/"
+            + settings.WEB_BASE_URL+"accounts/dashboard/orders/history/"
         
         emailmessage+="\n\nThank You."
         try:

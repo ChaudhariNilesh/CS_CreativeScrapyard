@@ -125,7 +125,7 @@ AUTH_USER_MODEL = 'Authentication.User'
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),"CreativeScrapyard","static","static-only")
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),"CreativeScrapyard","static","static-only") #USE cs_app for prod.
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),"CreativeScrapyard","static","media")    
 STATICFILES_DIRS = (os.path.join(os.path.dirname(BASE_DIR),"CreativeScrapyard","static","static"),)
 
@@ -151,3 +151,10 @@ PAYTM_SECRET_KEY= os.getenv("PAYTM_SECRET_KEY")
 PAYTM_WEBSITE= os.getenv("PAYTM_WEBSITE")
 PAYTM_CHANNEL_ID= os.getenv("PAYTM_CHANNEL_ID")
 PAYTM_INDUSTRY_TYPE_ID= os.getenv("PAYTM_INDUSTRY_TYPE_ID")
+
+if os.getenv('DJANGO_SETTINGS_MODULE') == "CreativeScrapyard.settings.prod" :
+    PAYTM_CALLBACK_URL= os.getenv('PAYTM_CALLBACK_PROD')
+    WEB_BASE_URL = os.getenv('PROD_BASE_URL')
+else:
+    PAYTM_CALLBACK_URL= os.getenv('PAYTM_CALLBACK_LOCAL')
+    WEB_BASE_URL = os.getenv('LOCAL_BASE_URL')
